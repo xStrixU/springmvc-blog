@@ -1,5 +1,6 @@
 package me.xstrixu.springmvcblog.service;
 
+import me.xstrixu.springmvcblog.exception.UserNotFoundException;
 import me.xstrixu.springmvcblog.model.dto.UserRegistrationDto;
 import me.xstrixu.springmvcblog.model.entity.User;
 
@@ -10,4 +11,6 @@ public interface UserService {
     Optional<User> getByEmail(String email);
 
     void save(UserRegistrationDto userRegistrationDto);
+
+    User getCurrentUser() throws UserNotFoundException;
 }

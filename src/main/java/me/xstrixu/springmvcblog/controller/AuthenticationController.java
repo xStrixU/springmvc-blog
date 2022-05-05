@@ -16,7 +16,7 @@ import java.util.Optional;
 
 @Controller
 @RequiredArgsConstructor
-public class AuthController {
+public class AuthenticationController {
 
     private final UserService userService;
 
@@ -49,6 +49,6 @@ public class AuthController {
 
         userService.save(userDto);
 
-        return "index";
+        return "redirect:/login?registered";
     }
 }

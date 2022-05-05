@@ -28,10 +28,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         var user = userDao.getByEmail(email)
                 .orElseThrow(() -> new UsernameNotFoundException("Invalid email or password."));
 
-        System.out.println("Email: " + user.getEmail());
-        System.out.println("Password: " + user.getPassword());
-        System.out.println("Roles size: " + user.getRoles().size());
-
         return new User(user.getEmail(), user.getPassword(), getAuthorities(user.getRoles()));
     }
 

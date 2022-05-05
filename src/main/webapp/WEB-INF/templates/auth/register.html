@@ -12,23 +12,23 @@
       <form th:action="@{/register}" th:object="${user}" method="POST">
         <div class="w-full mt-4">
           <input th:field="*{firstName}" th:classappend="${#fields.hasErrors('firstName')} ? 'border border-solid border-red-500' : ''" type="text" placeholder="First name" aria-label="First name" class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-500 bg-white border rounded-md dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300">
-          <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" class="text-sm text-red-500" />
+          <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" class="text-sm text-red-500"></span>
         </div>
         <div class="w-full mt-4">
           <input th:field="*{lastName}" th:classappend="${#fields.hasErrors('lastName')} ? 'border border-solid border-red-500' : ''" type="text" placeholder="Last name" aria-label="Last name" class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-500 bg-white border rounded-md dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300">
-          <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="text-sm text-red-500" />
+          <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="text-sm text-red-500"></span>
         </div>
         <div class="w-full mt-4">
           <input th:field="*{email}" th:classappend="${#fields.hasErrors('email')} ? 'border border-solid border-red-500' : ''" type="email" placeholder="Email" aria-label="Email" class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-500 bg-white border rounded-md dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300">
-          <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-sm text-red-500" />
+          <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-sm text-red-500"></span>
         </div>
         <div class="w-full mt-4">
           <input th:field="*{password}" th:classappend="${#fields.hasErrors('password')} ? 'border border-solid border-red-500' : ''" type="password" placeholder="Password" aria-label="Password" class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-500 bg-white border rounded-md dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300">
-          <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="text-sm text-red-500" />
+          <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="text-sm text-red-500"></span>
         </div>
         <div class="w-full mt-4">
           <input th:field="*{confirmPassword}" th:classappend="${#fields.hasErrors('confirmPassword')} ? 'border border-solid border-red-500' : ''" type="password" placeholder="Confirm password" aria-label="Confirm password" class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-500 bg-white border rounded-md dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300">
-          <span th:if="${#fields.hasErrors('confirmPassword')}" th:errors="*{confirmPassword}" class="text-sm text-red-500" />
+          <span th:if="${#fields.hasErrors('confirmPassword')}" th:errors="*{confirmPassword}" class="text-sm text-red-500"></span>
         </div>
         <button class="block mt-4 ml-auto px-4 py-2 leading-5 text-white transition-colors duration-200 transform bg-gray-700 rounded hover:bg-gray-600 focus:outline-none">Register</button>
       </form>

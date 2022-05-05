@@ -2,19 +2,25 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>Edit article</title>
   <link rel="stylesheet" th:href="@{/css/main.css}">
 </head>
 <body class="overflow-hidden">
-  <header class="bg-white shadow dark:bg-gray-800">
+  <header class="flex items-center justify-between bg-white shadow dark:bg-gray-800">
     <nav class="flex items-center p-6 ml-16 text-gray-600 capitalize dark:text-gray-300">
-      <a th:href="@{/}" class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-200 transform dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6">Articles</a>
-      <a th:href="@{/add-article}" class="text-gray-800 transition-colors duration-200 transform dark:text-gray-200 border-b-2 border-blue-500 mx-1.5 sm:mx-6">Add article</a>
+      <a th:href="@{/}" class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-200 transform dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6">Home</a>
+      <a th:href="@{/article/add}" class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-200 transform dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6">Add article</a>
+      <a th:href="@{/article/edit}" class="text-gray-800 transition-colors duration-200 transform dark:text-gray-200 border-b-2 border-blue-500 mx-1.5 sm:mx-6">Edit article</a>
     </nav>
+    <form th:action="@{/logout}" method="POST" class="mr-6">
+      <button class="px-4 py-2 leading-5 text-white transition-colors duration-200 transform bg-gray-700 rounded hover:bg-gray-600 focus:outline-none">Logout</button>
+    </form>
   </header>
+  <a th:href="@{/article/edit}" class="font-bold block text-3xl ml-4 mt-4 hover:text-zinc-700">Back</a>
   <div class="p-8 w-full max-w-3xl mx-auto mt-24 bg-white rounded-lg shadow-lg lg:p-12 lg:col-span-3">
-    <h2 class="font-bold text-2xl mb-8">Add article</h2>
-    <form th:action="@{/add-article}" th:object="${article}" method="POST" class="space-y-4">
+    <h2 class="font-bold text-2xl mb-8">Edit article</h2>
+    <form th:action="@{/article/edit}" th:object="${article}" method="POST" class="space-y-4">
+      <input type="hidden" name="id" th:value="${article.id}">
       <div>
         <label class="sr-only" for="title">Title</label>
         <input th:field="*{title}" th:classappend="${#fields.hasErrors('title')} ? 'border-red-500' : 'border-gray-200'" class="w-full p-3 text-sm rounded-lg" placeholder="Title" type="text" id="title" />
@@ -47,7 +53,7 @@
             type="submit"
             class="inline-flex items-center justify-center w-full px-5 py-3 text-white bg-black rounded-lg sm:w-auto"
         >
-          <span class="font-medium">Add article</span>
+          <span class="font-medium">Edit article</span>
           <svg
               xmlns="http://www.w3.org/2000/svg"
               class="w-5 h-5 ml-3"
